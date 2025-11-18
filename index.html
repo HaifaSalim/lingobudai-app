@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LingoBud AI</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&family=Raleway:wght@500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enable class-based dark mode
+        theme: {
+          extend: {
+            colors: {
+              'blush': '#FFE4E6',
+              'peach': '#4c2b00',
+              'lemon': '#FEF3C7',
+              'green': '#DCFCE7',
+              'periwinkle': '#E0E7FF',
+              'soft-white': '#F8FAFC',
+              // Dark theme palette
+              'dark-bg': '#111827', // A deep blue-gray
+              'dark-card': '#1f2937', // A lighter card background
+              'dark-text': '#d1d5db', // Off-white text
+              'dark-blush': '#5c2b2f',
+              'dark-peach': '#6b4629',
+              'dark-lemon': '#5c5331',
+              'dark-green': '#2a4b36',
+              'dark-periwinkle': '#312e81',
+              // Much darker colors for chat bubbles in dark mode
+              'dark-bubble-peach-start': '#4E2A1E',
+              'dark-bubble-blush-end': '#4F222D',
+              'dark-bubble-green-start': '#1E4232',
+              'dark-bubble-periwinkle-end': '#2A2854',
+            },
+            fontFamily: {
+              heading: ['Poppins', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+              accent: ['Raleway', 'sans-serif'],
+            },
+            keyframes: {
+              'fade-in': {
+                '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'fade-in-out': {
+                  '0%, 100%': { opacity: '0', transform: 'translateY(-20px)' },
+                  '10%, 90%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'bounce': {
+                '0%, 100%': { transform: 'translateY(-25%)', animationTimingFunction: 'cubic-bezier(0.8,0,1,1)' },
+                '50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0,0,0.2,1)' }
+              }
+            },
+            animation: {
+              'fade-in': 'fade-in 0.3s ease-out forwards',
+              'fade-in-out': 'fade-in-out 3s ease-in-out forwards',
+            },
+            perspective: {
+              '1000': '1000px',
+            },
+          },
+        },
+        plugins: [
+          function({ addUtilities }) {
+              addUtilities({
+                  '.transform-style-3d': {
+                      'transform-style': 'preserve-3d',
+                  },
+                  '.backface-hidden': {
+                      'backface-visibility': 'hidden',
+                  },
+                  '.rotate-y-180': {
+                      'transform': 'rotateY(180deg)',
+                  },
+              })
+          },
+        ],
+      }
+    </script>
+    <script type="importmap">
+      {
+        "imports": {
+          "react/": "https://aistudiocdn.com/react@^19.2.0/",
+          "react": "https://aistudiocdn.com/react@^19.2.0",
+          "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+          "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1",
+          "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+          "lucide-react": "https://aistudiocdn.com/lucide-react@^0.553.0",
+          "zustand": "https://aistudiocdn.com/zustand@^5.0.8",
+          "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.81.1",
+          "@lottiefiles/react-lottie-player": "https://aistudiocdn.com/@lottiefiles/react-lottie-player@^3.6.0"
+        }
+      }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-soft-white text-gray-700 font-body dark:bg-dark-bg dark:text-dark-text transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

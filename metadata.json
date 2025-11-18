@@ -1,0 +1,7 @@
+{
+  "name": "LingoBud AI",
+  "description": "An interactive language learning application featuring an AI avatar you can talk to! The app uses AI to hold conversations, automatically create flashcards, and uses a spaced repetition system to enhance vocabulary learning.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
