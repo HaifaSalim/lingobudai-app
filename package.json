@@ -4,16 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "npx vite",
+    "build": "npx vite build",
+    "preview": "npx vite preview"
   },
   "dependencies": {
     "@google/genai": "^1.29.1",
     "@lottiefiles/react-lottie-player": "^3.6.0",
     "@supabase/supabase-js": "^2.81.1",
     "lucide-react": "^0.553.0",
-    "node": "^25.2.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.6",
