@@ -1,7 +1,11 @@
 import { GoogleGenAI, Type, Modality } from "@google/genai";
 import type { UserProfile, GeminiResponse, GeminiFlashcard } from '../types';
 
-const API_KEY = 'AIzaSyAijXMaDR7mokooR0_UStJNWZAbNynZ9xk';
+const API_KEY = (import.meta as any).env.VITE_GEMINI_API_KEY;
+
+if (!API_KEY) {
+    throw new Error("VITE_GEMINI_API_KEY is not set. Please add it to your .env.local file.");
+}
 
 const ai = new GoogleGenAI({ apiKey: API_KEY });
 
